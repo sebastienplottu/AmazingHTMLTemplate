@@ -1,23 +1,65 @@
-html, body{
-    padding: 0;
-    margin: 0;
-    width: 100%;
+//Taille
+$navbar-height: 70px;
+$hero-height: 200px;
+$blue-section-height: 250px;
+$light-color: 40;
+$dark-color: 40;
+//Colors
+$red: red;
+//Breakpoints
+$xsmall: 370px;
+$small: 700px;
+$medium: 1080px;
+$large: 1400px;
+$xlarge: 1920px;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.navbar {
+  width: 100%;
+  height: $navbar-height;
+  background-color: black;
+}
+.hero {
+  width: 100%;
+  height: $hero-height;
+  background-color: red;
+}
+.blue-section {
+  width: 100%;
+  height: $blue-section-height;
+  @media screen and (max-width: $medium) {
+    flex-direction: column;
+  }
+  @media screen and (max-width: $small) {
+    flex-direction: column-reverse;
+  }
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .bs-bloc {
     height: 100%;
+    flex: 1;
+    &.light-blue {
+      background-color: lighten(blue, $light-color);
+    }
+    &.dark-blue {
+      background-color: darken(blue, $dark-color);
+    }
+  }
 }
-
-.container{
-    width: 100%;
-    height: 100%;
-    position: relative;
+/*
+@media (max-width: $medium) {
+  .blue-section {
+    flex-direction: column;
+  }
 }
-
-.container h1{
-    color: red;
-    text-align: center;
-}
-
-.container img{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
+*/

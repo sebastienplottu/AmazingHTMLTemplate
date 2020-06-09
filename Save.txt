@@ -1,0 +1,13 @@
+h1 {
+    color: $bleu;
+    text-align: center;
+    &:hover {
+      color: lighten($color: $bleu, $amount: 20);
+    }
+  }
+
+  img {
+    position: absolute;
+    bottom: $img-attach;
+    right: $img-attach;
+  }
